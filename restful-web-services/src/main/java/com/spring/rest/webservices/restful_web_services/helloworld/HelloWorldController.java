@@ -13,13 +13,9 @@ public class HelloWorldController {
 		return "Hello World";
 	}
 	
-	@GetMapping(path = "/hello-world-infinity")
-	public String helloWorldInfinity() {
-		StringBuffer buffer = new StringBuffer();
-		for(int i = 1; i <= 1000; i++) {
-			System.out.println("Test "+ i);
-			buffer.append("Test "+i);
-		}
-		return buffer.toString();
+	@GetMapping(path = "/hello-world-bean")
+	public HelloWorldBean helloWorldBean() {
+		return new HelloWorldBean("Hello World");
 	}
+	
 }
