@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import jakarta.validation.Valid;
+
 @RestController
 public class UserResource {
 
@@ -42,7 +44,7 @@ public class UserResource {
 	
 	//POST /users
 	@PostMapping("/users")
-	public ResponseEntity<Object> createUser(@RequestBody User user) {
+	public ResponseEntity<Object> createUser(@Valid @RequestBody User user) {
 		User savedUser = service.save(user);
 		
 		// If we want to return the location of the newly created user
