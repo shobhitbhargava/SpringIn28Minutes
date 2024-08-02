@@ -59,7 +59,4 @@ public class UserResource {
 		service.deleteByID(id);
 	}
 	
-	
-	
-	
 }
